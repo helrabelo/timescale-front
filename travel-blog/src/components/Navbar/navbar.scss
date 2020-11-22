@@ -1,0 +1,107 @@
+@import '../../App.scss';
+
+.navbar-wrapper {
+  grid-area: header;
+  grid-column: 1 / 13;
+  background: $primary-light;
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    margin: 0 auto;
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-style: italic;
+      }
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      a {
+        cursor: pointer;
+
+        &:not(:first-child) {
+          margin-left: 20px;
+        }
+
+        &.link {
+          color: black;
+        }
+      }
+
+      .burger-menu {
+        padding: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background: none;
+        border: none;
+        flex-direction: column;
+        margin-left: 10px;
+
+        span {
+          background: $primary;
+          width: 20px;
+          height: 3px;
+          margin-bottom: 3px;
+          display: inline-block;
+        }
+      }
+      
+    }
+  }
+}
+
+@media (max-width: $medium-breakpoint) {
+  .navbar-wrapper {
+    .navbar {
+      margin: 0;
+      flex-direction: row;
+      padding: 12px 30px;
+
+      nav {
+        position: relative;
+
+        .burger-menu-content {
+          position: absolute;
+          left: -120px;
+          bottom: -150px;
+          display: flex;
+          flex-direction: column;
+          background-color: $primary-light;
+          border: thin solid #cccc;
+          box-shadow: 1px 3px 6px #cccc;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 20px 30px;
+          border-radius: 16px;
+
+          .close-menu {
+            position: absolute;
+            background: none;
+            padding: 6px;
+            color: red;
+            font-size: 1.2rem;
+            top: 12px;
+            right: 12px;
+            border: none;
+          }
+
+          a {
+            margin: 0;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}

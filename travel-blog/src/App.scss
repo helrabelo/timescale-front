@@ -6,15 +6,73 @@ $profile-image-width: 300px;
 
 $gutter: 8px;
 $gray: #333;
-$primary: #1977F3;
-$primary-light: #EEF5FE;
+$primary: #1977f3;
+$primary-light: #eef5fe;
 
 $small-breakpoint: 500px;
 $medium-breakpoint: 960px;
 
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
 .app {
-  * {
-    font-family: 'Inter', sans-serif;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: $gutter;
+  row-gap: 0;
+  grid-template-rows: 80px auto auto 40px;
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas:
+    'header'
+    'aside'
+    'main'
+    'footer';
+
+  .button {
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: $primary-light;
+
+    &:hover {
+      background-color: $primary-light;
+      color: $primary;
+    }
+
+    &.button-primary {
+      background-color: $primary;
+      color: $primary-light;
+    }
   }
+}
+
+.hide-desktop {
+  visibility: none;
+  opacity: 0;
+}
+
+@media (max-width: $medium-breakpoint) {
+  .hide-mobile {
+    visibility: none;
+    opacity: 0;
+    display: none;
+  }
+
+  .hide-desktop {
+    visibility: unset;
+    opacity: 1;
+  }
+}
+
+@media (max-width: $small-breakpoint) {
+  .app {
+    grid-template-rows: 80px 1fr 1fr 60px;
+    
+  }  
 }

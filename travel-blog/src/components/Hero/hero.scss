@@ -1,0 +1,21 @@
+@import '../../App.scss';
+
+aside {
+  grid-column: 1 / 13;
+  .hero-banner {
+    grid-area: aside;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: $medium-breakpoint) {
+  aside {
+    .hero-banner {
+      padding: 0;
+
+      img {
+        min-height: 250px;
+      }
+    }
+  }
+}

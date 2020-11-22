@@ -1,0 +1,49 @@
+@import '../../App.scss';
+
+main {
+  grid-area: main;
+  grid-column: 1 / 13;
+  .main-wrapper {
+    .image-wrapper {
+      flex-grow: 1;
+
+      padding: 20px 10px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+
+      #headshot {
+        width: $profile-image-width;
+        max-width: $profile-image-width;
+        border-radius: 100%;
+      }
+    }
+
+    .content {
+      flex-grow: 2;
+      padding: 20px 10px;
+
+      > * {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: $medium-breakpoint) {
+  main {
+    .main-wrapper {
+      .image-wrapper {
+        margin: 0 auto;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        #headshot {
+          width: 200px;
+          max-width: 200px;
+        }
+      }
+    }
+  }
+}

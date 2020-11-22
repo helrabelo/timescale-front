@@ -86,13 +86,3 @@ module.exports = {
   getDCHeroesWithMoreThanOneCharacter,
   groupByPublisher,
 };
-
-// console.log(getMarvelHeroes(superHeroes));
-
-// console.log(getDCHeroes(superHeroes));
-
-// console.log(convertCharactersToArray(superHeroes));
-
-// console.log(groupByPublisher(superHeroes));
-
-console.log(getDCHeroesWithMoreThanOneCharacter(superHeroes));

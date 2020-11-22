@@ -1,0 +1,27 @@
+@import "../../../App.scss";
+
+.container {
+  max-width: $site-width;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+
+  &.fullwidth {
+    max-width: $hero-width;
+  }
+}
+
+@media (max-width: $medium-breakpoint) {
+  .container {
+    max-width: $medium-breakpoint;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: $small-breakpoint) {
+  .container {
+    max-width: $medium-breakpoint;
+    flex-direction: column;
+    padding: 0 30px;
+  }
+}
